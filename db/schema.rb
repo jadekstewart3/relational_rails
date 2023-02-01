@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_01_211405) do
+ActiveRecord::Schema.define(version: 2023_02_01_220249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,4 +24,15 @@ ActiveRecord::Schema.define(version: 2023_02_01_211405) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "patrons", force: :cascade do |t|
+    t.integer "gym_id"
+    t.string "name"
+    t.boolean "belay_certified"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "climbing_gym_id"
+    t.index ["climbing_gym_id"], name: "index_patrons_on_climbing_gym_id"
+  end
+
+  add_foreign_key "patrons", "climbing_gyms"
 end
