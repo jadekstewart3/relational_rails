@@ -1,0 +1,6 @@
+<h1>Patrons</h1>
+<% @patrons.each do |patron|%>
+<h3><%=patron.name%></h3>
+<p>Gym id: <%=patron.gym_id%></p>
+<p>Belay Certified: <%=patron.belay_certified%></p>
+<%end%>
