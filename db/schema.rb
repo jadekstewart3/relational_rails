@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_01_220249) do
+ActiveRecord::Schema.define(version: 2023_02_02_215501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 2023_02_01_220249) do
   end
 
   create_table "patrons", force: :cascade do |t|
-    t.integer "gym_id"
     t.string "name"
+    t.integer "years_member"
     t.boolean "belay_certified"
+    t.bigint "climbing_gym_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "climbing_gym_id"
     t.index ["climbing_gym_id"], name: "index_patrons_on_climbing_gym_id"
   end
 
