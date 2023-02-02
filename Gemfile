@@ -42,6 +42,7 @@ group :development, :test do
   gem 'capybara'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
@@ -53,3 +54,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'net-http'
