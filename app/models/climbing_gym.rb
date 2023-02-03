@@ -1,7 +1,5 @@
 class ClimbingGym < ApplicationRecord
   has_many :patrons
 
-  def self.sort
-    ClimbingGym.order(created_at: :desc)
-  end
+  scope :by_created_at, -> { order(created_at: :desc) }
 end
