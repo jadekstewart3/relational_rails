@@ -14,16 +14,7 @@ RSpec.describe ClimbingGym do
       @patron_3 = @gym_2.patrons.create!(name: 'Sean Morris', years_member: 7, belay_certified: true)
       @patron_4 = @gym_2.patrons.create!(name: 'Denise Corona', years_member: 2, belay_certified: true)
 
-      expect(ClimbingGym.sort).to eq([@gym_1, @gym_2])
+      expect(ClimbingGym.sort).to eq([@gym_2, @gym_1])
     end
   end
 end
-
-
-
-# User Story 6, Parent Index sorted by Most Recently Created 
-
-# As a visitor
-# When I visit the parent index,
-# I see that records are ordered by most recently created first
-# And next to each of the records I see when it was created
