@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/climbing_gym/:id', to: 'climbing_gym#show'
   get '/patrons', to: 'patrons#index'
   get '/patrons/:id', to: 'patrons#show'
+  get 'climbing_gym/:gym_id/patrons', to: 'climbing_gym_patrons#index'
 end
