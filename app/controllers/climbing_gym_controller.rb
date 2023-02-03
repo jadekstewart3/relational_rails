@@ -1,6 +1,6 @@
 class ClimbingGymController < ApplicationController
   def index
-    @climbing_gyms = ClimbingGym.all
+    @climbing_gyms = ClimbingGym.sort
   end
 
   def show
