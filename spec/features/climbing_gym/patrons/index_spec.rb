@@ -35,5 +35,14 @@ RSpec.describe 'Climbing Gyms Patrons Index' do
 
       expect(current_path).to eq("/patrons")
     end
+
+    it 'links to the climbing gym index page' do
+      gym = ClimbingGym.create(name: "Movement", city: "Golden", number_of_routes: 500, classes_offered: true)
+      visit "/climbing_gym/#{gym.id}/patrons"
+
+      click_on "Climbing Gyms"
+
+      expect(current_path).to eq("/climbing_gym")
+    end
   end
 end
