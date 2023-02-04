@@ -16,4 +16,12 @@ RSpec.describe 'the patrons show page' do
     expect(page).to have_content(patron_1.years_member)
     expect(page).to have_content(patron_1.belay_certified)
   end
+
+  it 'links to the patrons index page' do
+    visit "/climbing_gym"
+
+    click_on "Patrons"
+
+    expect(current_path).to eq("/patrons")
+  end
 end

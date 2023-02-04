@@ -19,4 +19,12 @@ RSpec.describe 'the climbing gym show page' do
 
     expect(page).to have_content("Patrons: #{gym.patrons.count}")
   end
+
+  it 'links to the patrons index page' do
+    visit "/climbing_gym"
+
+    click_on "Patrons"
+
+    expect(current_path).to eq("/patrons")
+  end
 end
