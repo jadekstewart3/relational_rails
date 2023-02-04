@@ -42,6 +42,14 @@ RSpec.describe 'the climbing gyms index page' do
     expect("Vertical Ventures").to appear_before("The Spot", only_text: true)
     expect("The Spot").to appear_before("Movement", only_text: true)
     expect("Movement").to appear_before("EarthTreks", only_text: true)
-
   end
+
+  it 'links to the patrons index page' do
+    visit "/climbing_gym"
+
+    click_on "Patrons"
+
+    expect(current_path).to eq("/patrons")
+  end
+
 end
