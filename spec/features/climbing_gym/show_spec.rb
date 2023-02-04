@@ -17,13 +17,6 @@ RSpec.describe 'the climbing gym show page' do
     patron_2 = gym.patrons.create!(name: 'Brianna Campos', years_member: 2, belay_certified: true)
     visit "/climbing_gym/#{gym.id}"
 
-    expect(page).to have_content()
+    expect(page).to have_content("Patrons: #{gym.patrons.count}")
   end
-
-  # User Story 7, Parent Child Count
-
-  # As a visitor
-  # When I visit a parent's show page
-  # I see a count of the number of children associated with this parent
-
 end
