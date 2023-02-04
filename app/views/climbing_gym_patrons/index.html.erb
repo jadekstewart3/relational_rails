@@ -1,0 +1,6 @@
+<%= link_to 'Patrons', '/patrons'%>
+<% @patrons.each do |patron|%>
+<h2><%=patron.name%></h2>
+<p>Membership length: <%= patron.years_member%> years</p>
+<p>Belay Certified: <%= patron.belay_certified%></p>
+<%end%>

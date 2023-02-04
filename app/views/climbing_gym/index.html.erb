@@ -1,5 +1,11 @@
 <h1>Climbing Gyms</h1>
-<% @climbing_gyms.each do |gym|%>
-<h3> <%=gym.name%></h3>
-<p> Location: <%= gym.city %> </p>
+<%= link_to 'Patrons', '/patrons'%>
+<ul>
+  <% @climbing_gyms.each_with_index do |gym, index|%>
+    <li id=gym-<%=index%>>
+      <%=gym.name%>
+      Created at: <%=gym.created_at%>
+      <br>Location: <%= gym.city %></br>
+    </li>
   <% end%>
+</ul>
