@@ -5,5 +5,6 @@ class ClimbingGymController < ApplicationController
 
   def show
     @climbing_gym = ClimbingGym.find(params[:id])
+    @patrons = @climbing_gym.patrons.count
   end
 end
