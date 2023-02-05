@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'new patron creation' do 
   it 'links to the new page from the gym patron index' do 
-    gym = ClimbingGym.create!(name: "Movment", city: "Golden", number_of_routes: 500, classes_offered: true)
+    gym = ClimbingGym.create!(name: "Movement", city: "Golden", number_of_routes: 500, classes_offered: true)
 
     visit "climbing_gym/#{gym.id}/patrons"
 
@@ -12,7 +12,7 @@ RSpec.describe 'new patron creation' do
   end
 
   it 'can create a new patron' do
-    gym = ClimbingGym.create!(name: "Movment", city: "Golden", number_of_routes: 500, classes_offered: true)
+    gym = ClimbingGym.create!(name: "Movement", city: "Golden", number_of_routes: 500, classes_offered: true)
 
     visit "climbing_gym/#{gym.id}/patrons/new"
 
