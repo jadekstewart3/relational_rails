@@ -1,5 +1,6 @@
 <h1>Climbing Gyms</h1>
-<%= link_to 'Patrons', '/patrons'%>
+<%= link_to 'Patrons', '/patrons' %>
+<%= link_to 'New Climbing Gym', '/climbing_gym/new' %>
 <ul>
   <% @climbing_gyms.each_with_index do |gym, index|%>
     <li id=gym-<%=index%>>
