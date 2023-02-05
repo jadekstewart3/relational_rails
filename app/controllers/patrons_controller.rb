@@ -1,6 +1,6 @@
 class PatronsController < ApplicationController
   def index
-    @patrons = Patron.all
+    @patrons = Patron.is_belay_certified
   end
 
   def show
