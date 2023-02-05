@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post 'climbing_gym/:id/patrons',      to: 'climbing_gym_patrons#create'
   get '/patrons',                       to: 'patrons#index'
   get '/patrons/:id',                   to: 'patrons#show'
+  get '/patrons/:id/edit',              to: 'patrons#edit'
+  patch '/patrons/:id',                 to: 'patrons#update'
   get 'climbing_gym/:id/edit',          to: 'climbing_gym#edit'
   patch 'climbing_gym/:id',             to: 'climbing_gym#update'
 end
