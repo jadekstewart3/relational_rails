@@ -1,5 +1,8 @@
-<%= link_to 'Patrons', '/patrons'%> <%= link_to 'Climbing Gyms', '/climbing_gym'%> <%=link_to 'Gym Patrons', "/climbing_gym/#{@climbing_gym.id}/patrons"%>
-<h1><%=@climbing_gym.name%></h1>
+<%= link_to 'Patrons', '/patrons'%> 
+<%= link_to 'Climbing Gyms', '/climbing_gym'%> 
+<%=link_to 'Gym Patrons', "/climbing_gym/#{@climbing_gym.id}/patrons"%>
+<p><h1><%=@climbing_gym.name %></h1>
+<%= button_to "Update #{@climbing_gym.name}",  "/climbing_gym/#{@climbing_gym.id}/edit", method: :get %></p>
 <p>City: <%=@climbing_gym.city%></p>
 <p>Routes: <%= @climbing_gym.number_of_routes%></p>
 <p>Classes: <%=@climbing_gym.classes_offered%></p>
