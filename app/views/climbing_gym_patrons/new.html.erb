@@ -1,0 +1,9 @@
+<%= form_with url: "/climbing_gym/#{@gym.id}/patrons", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :years_member %>
+  <%= form.text_field :years_member %>
+  <%= form.label :belay_certified %>
+  <%= form.text_field :belay_certified %>
+  <%= form.submit "Create Patron" %>
+<%end%>

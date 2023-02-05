@@ -1,4 +1,6 @@
 <%= link_to 'Patrons', '/patrons'%>
+<%= link_to 'Climbing Gyms', '/climbing_gym'%>
+<%= link_to 'Update Patron', "/patrons/#{@patron.id}/edit"%>
 <h1><%=@patron.name%></h1>
 <p>Years a member: <%=@patron.years_member%></p>
 <p>Belay Certified: <%=@patron.belay_certified%></p>

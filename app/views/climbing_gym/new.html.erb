@@ -1,0 +1,11 @@
+<%= form_with url: '/climbing_gym', method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :city %>
+  <%= form.text_field :city %>
+  <%= form.label :number_of_routes %>
+  <%= form.text_field :number_of_routes %>
+  <%= form.label :classes_offered %>
+  <%= form.text_field :classes_offered %>
+  <%= form.submit "Create Climbing Gym" %>
+<%end%>

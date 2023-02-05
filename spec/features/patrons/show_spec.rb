@@ -18,10 +18,22 @@ RSpec.describe 'the patrons show page' do
   end
 
   it 'links to the patrons index page' do
-    visit "/climbing_gym"
+    gym = ClimbingGym.create!(name: "Movement", city: "Golden", number_of_routes: 500, classes_offered: true)
+    patron_1 = gym.patrons.create!(name: 'Jade Stewart', years_member: 6, belay_certified: true)
+    visit "/patrons/#{patron_1.id}"
 
     click_on "Patrons"
 
     expect(current_path).to eq("/patrons")
+  end
+
+  it 'links to the climbing gyms index page' do
+    gym = ClimbingGym.create!(name: "Movement", city: "Golden", number_of_routes: 500, classes_offered: true)
+    patron_1 = gym.patrons.create!(name: 'Jade Stewart', years_member: 6, belay_certified: true)
+    visit "/patrons/#{patron_1.id}"
+
+    click_on "Climbing Gyms"
+
+    expect(current_path).to eq("/climbing_gym")
   end
 end

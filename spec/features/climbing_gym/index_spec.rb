@@ -51,5 +51,4 @@ RSpec.describe 'the climbing gyms index page' do
 
     expect(current_path).to eq("/patrons")
   end
-
 end
