@@ -9,12 +9,10 @@ class ClimbingGymController < ApplicationController
   end
 
   def new
-
   end
 
   def create
     new_gym = ClimbingGym.create(climbing_gym_params)
-
     redirect_to "/climbing_gym"
   end
 
@@ -28,6 +26,7 @@ class ClimbingGymController < ApplicationController
     redirect_to "/climbing_gym/#{climbing_gym.id}"
   end
 
+  private
   def climbing_gym_params
     params.permit(:name, :city, :number_of_routes, :classes_offered)
   end
