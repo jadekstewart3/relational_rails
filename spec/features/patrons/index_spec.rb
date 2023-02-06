@@ -44,5 +44,4 @@ RSpec.describe 'the patrons index page' do
     expect(page).to have_content("Jade Stewart")
     expect(page).to have_no_content("Billie Jo McMurren")
   end
-
 end
