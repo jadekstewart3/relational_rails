@@ -27,4 +27,16 @@ RSpec.describe 'edit an existing patron' do
     expect(current_path).to eq("/patrons/#{patron_2.id}")
     expect(page).to have_content('Philip DeFraties')
   end
+
+  describe 'link to edit next to every patron on index page' do 
+    it 'links to the edit page' do
+    gym = ClimbingGym.create!(name: "Movement", city: "Golden", number_of_routes: 500, classes_offered: true)
+    patron_2 = gym.patrons.create!(name: 'Philip DFraties', years_member: 6, belay_certified: true)
+
+    visit "/patrons"
+    click_on "Update #{patron_2.name}"
+
+    expect(current_path).to eq("/patrons/#{patron_2.id}/edit")
+  end
+  end
 end

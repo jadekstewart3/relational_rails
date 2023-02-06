@@ -55,8 +55,7 @@ RSpec.describe 'Climbing Gyms Patrons Index' do
       visit "climbing_gym/#{gym.id}/patrons"
 
       click_on 'Sort Alphabetically'
-      save_and_open_page
-      
+
       expect("Billie Jo McMurren").to appear_before("Jade Stewart")
     end
   end
