@@ -45,4 +45,19 @@ RSpec.describe 'Climbing Gyms Patrons Index' do
       expect(current_path).to eq("/climbing_gym")
     end
   end
+
+  describe 'sort patrons in alphabetical order' do 
+    it 'sorts the patrons alphabetically' do
+      gym = ClimbingGym.create(name: "Movement", city: "Golden", number_of_routes: 500, classes_offered: true)
+      patron_1 = gym.patrons.create!(name: 'Jade Stewart', years_member: 6, belay_certified: true)
+      patron_2 = gym.patrons.create!(name: 'Billie Jo McMurren', years_member: 6, belay_certified: true)
+          
+      visit "climbing_gym/#{gym.id}/patrons"
+
+      click_on 'Sort Alphabetically'
+      save_and_open_page
+      
+      expect("Billie Jo McMurren").to appear_before("Jade Stewart")
+    end
+  end
 end

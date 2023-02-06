@@ -4,6 +4,12 @@ class ClimbingGymPatronsController < ApplicationController
     @patrons = @gym.patrons
   end
 
+  def alpha_index
+    @gym = ClimbingGym.find(params[:id])
+    @patrons = @gym.patrons.sort_alphabetically
+    render 'index'
+  end
+
   def new
     @gym = ClimbingGym.find(params[:id])
   end

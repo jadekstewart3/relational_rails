@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   patch '/patrons/:id',                 to: 'patrons#update'
   get 'climbing_gym/:id/edit',          to: 'climbing_gym#edit'
   patch 'climbing_gym/:id',             to: 'climbing_gym#update'
+  get 'climbing_gym/:id/patrons/alpha_index', to: 'climbing_gym_patrons#alpha_index'
 end
