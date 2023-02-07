@@ -4,7 +4,9 @@
 <ul>
   <% @climbing_gyms.each_with_index do |gym, index|%>
     <li id=gym-<%=index%>>
-     <p> <%=gym.name%> <%= link_to "Update #{gym.name}", "/climbing_gym/#{gym.id}/edit" %></p>
+     <p> <%=gym.name%> 
+     <%= link_to "Update #{gym.name}", "/climbing_gym/#{gym.id}/edit" %>
+     <%= link_to "Delete #{gym.name}", "/climbing_gym/#{gym.id}", method: :delete %> </p>
       Created at: <%=gym.created_at%>
       <br>Location: <%= gym.city %></br>
     </li>
