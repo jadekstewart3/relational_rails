@@ -1,3 +1,9 @@
+<%=form_with url:"/climbing_gym/#{@gym.id}/patrons/filter", method: :get, local: true do |form|%>
+<%= form.label :filter_membership_by_length, 'Filter Members by Membership Length'%>
+<%= form.text_field :filter_membership_by_length%>
+<%= form.submit 'Filter'%>
+<%end%>
+
 <%= link_to 'Patrons', '/patrons'%> 
 <%= link_to 'Climbing Gyms', '/climbing_gym'%>
 <%= link_to 'Sort Alphabetically', "/climbing_gym/#{@gym.id}/patrons/alpha_index"%>

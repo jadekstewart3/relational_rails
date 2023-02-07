@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'climbing_gym/:id/patrons',       to: 'climbing_gym_patrons#index'
   get 'climbing_gym/:id/patrons/new',   to: 'climbing_gym_patrons#new'
   post 'climbing_gym/:id/patrons',      to: 'climbing_gym_patrons#create'
+  get 'climbing_gym/:id/patrons/filter',       to: 'climbing_gym_patrons#filter'
 
   get '/patrons',                       to: 'patrons#index'
   get '/patrons/:id',                   to: 'patrons#show'
