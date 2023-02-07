@@ -26,6 +26,12 @@ class ClimbingGymController < ApplicationController
     redirect_to "/climbing_gym/#{climbing_gym.id}"
   end
 
+  def destroy
+    climbing_gym = ClimbingGym.find(params[:id])
+    climbing_gym.destroy
+    redirect_to "/climbing_gym"
+  end
+
   private
   def climbing_gym_params
     params.permit(:name, :city, :number_of_routes, :classes_offered)

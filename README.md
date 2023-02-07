@@ -1,24 +1,25 @@
 # README
+Please make sure you have:
+**Ruby v2.7.4** and **Rails 5.2.8**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+If you do not have the correct ruby version-
+In your command line run: ```rbenv install 2.7.4``` 
+Check to see if you have the correct version by running: ```ruby -v```
 
-Things you may want to cover:
+If you do not have the correct rails version-
+In your command line run: ```gem install rails --version 5.2.8```
+Check to see if you have the correct version by running: ```rails -v```
 
-* Ruby version
+In order to set up the database-
+In your command line run: ```rails db:{drop,create,migrate,seed}```
 
-* System dependencies
+To run the feature tests-
+In your command line run: ```rspec spec/features/ ```
 
-* Configuration
+To run the model tests-
+In your command line run: ```rspec spec/models/```
 
-* Database creation
+To run the entire test suit-
+In your command line run: ```bundle exec rspec```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Schema](/app/assets/images/schema.png)

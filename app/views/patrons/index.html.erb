@@ -1,7 +1,9 @@
 <%= link_to 'Climbing Gyms', '/climbing_gym'%>
 <h1>Patrons</h1>
 <% @patrons.each do |patron|%>
-<h3><%=patron.name%></h3>
+<p><%=patron.name%> 
+<%= link_to "Update #{patron.name}", "/patrons/#{patron.id}/edit" %>
+<%= link_to "Delete #{patron.name}", "/patrons/#{patron.id}", method: :delete %></p>
 <p>Gym id: <%=patron.climbing_gym_id%></p>
 <p>Years a member: <%=patron.years_member%></p>
 <p>Belay Certified: <%=patron.belay_certified%></p>

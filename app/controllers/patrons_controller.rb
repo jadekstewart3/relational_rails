@@ -1,6 +1,6 @@
 class PatronsController < ApplicationController
   def index
-    @patrons = Patron.all
+    @patrons = Patron.is_belay_certified
   end
 
   def show
@@ -15,6 +15,12 @@ class PatronsController < ApplicationController
     patron = Patron.find(params[:id])
     patron.update(patron_params)
     redirect_to "/patrons/#{patron.id}"
+  end
+
+  def destroy 
+    patron = Patron.find(params[:id])
+    patron.destroy
+    redirect_to '/patrons'
   end
 
   private

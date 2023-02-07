@@ -23,14 +23,25 @@ RSpec.describe 'the patrons index page' do
     expect(page).to have_content("Belay Certified: #{patron_2.belay_certified}")
   end
 
-   it 'links to the climbing gym index page' do
-      gym = ClimbingGym.create(name: "Movement", city: "Golden", number_of_routes: 500, classes_offered: true)
-      patron_1 = gym.patrons.create!(name: 'Jade Stewart', years_member: 6, belay_certified: true)
+  it 'links to the climbing gym index page' do
+    gym = ClimbingGym.create(name: "Movement", city: "Golden", number_of_routes: 500, classes_offered: true)
+    patron_1 = gym.patrons.create!(name: 'Jade Stewart', years_member: 6, belay_certified: true)
 
-      visit "/patrons"
+    visit "/patrons"
 
-      click_on "Climbing Gyms"
+    click_on "Climbing Gyms"
 
-      expect(current_path).to eq("/climbing_gym")
-    end
+    expect(current_path).to eq("/climbing_gym")
+  end
+
+  it 'displays patrons that are belay certified' do
+    gym = ClimbingGym.create(name: "Movement", city: "Golden", number_of_routes: 500, classes_offered: true)
+    patron_1 = gym.patrons.create!(name: 'Jade Stewart', years_member: 6, belay_certified: true)
+    patron_2 = gym.patrons.create!(name: 'Billie Jo McMurren', years_member: 6, belay_certified: false)
+
+    visit "/patrons"
+
+    expect(page).to have_content("Jade Stewart")
+    expect(page).to have_no_content("Billie Jo McMurren")
+  end
 end
