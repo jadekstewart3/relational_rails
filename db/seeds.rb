@@ -13,3 +13,6 @@
     @patron_3 = @gym_2.patrons.create!(name: 'Sean Morris', years_member: 7, belay_certified: true)
     @patron_4 = @gym_2.patrons.create!(name: 'Denise Corona', years_member: 2, belay_certified: true)
     @patron_5 = @gym_2.patrons.create!(name: 'Billie Jo McMurren', years_member: 2, belay_certified: false)
+    @patron_6 = @gym_3.patrons.create!(name: 'Billie Jo McMurren', years_member: 2, belay_certified: false)
+    @patron_7 = @gym_3.patrons.create!(name: 'Billie Jo McMurren', years_member: 2, belay_certified: false)
+    @patron_8 = @gym_3.patrons.create!(name: 'Billie Jo McMurren', years_member: 2, belay_certified: false)

@@ -52,4 +52,32 @@ RSpec.describe 'the climbing gyms index page' do
       expect(current_path).to eq("/patrons")
     end
   end 
+
+  describe 'sort climbing gyms by number of patrons' do
+    it 'displays sorted gyms by number of patrons' do
+    gym_1 = ClimbingGym.create!(name: "Movement", city: "Golden", number_of_routes: 500, classes_offered: true)
+    gym_2 = ClimbingGym.create!(name: "Vertical Ventures", city: "Denver", number_of_routes: 300, classes_offered: false)
+    gym_3 = ClimbingGym.create!(name: "EarthTreks", city: "Englewood", number_of_routes: 1000, classes_offered: true)
+
+    patron_1 = gym_1.patrons.create!(name: 'Jade Stewart', years_member: 6, belay_certified: true)
+    patron_2 = gym_1.patrons.create!(name: 'Philip DeFraties', years_member: 6, belay_certified: true)
+
+    patron_3 = gym_2.patrons.create!(name: 'Sean Morris', years_member: 7, belay_certified: true)
+    patron_4 = gym_2.patrons.create!(name: 'Denise Corona', years_member: 2, belay_certified: true)
+    patron_5 = gym_2.patrons.create!(name: 'Billie Jo McMurren', years_member: 2, belay_certified: false)
+
+    patron_6 = gym_3.patrons.create!(name: 'Hannah Conlisk', years_member: 2, belay_certified: false)
+    patron_7 = gym_3.patrons.create!(name: 'Zach Hazelwood', years_member: 2, belay_certified: false)
+    patron_8 = gym_3.patrons.create!(name: 'Amy Nelson', years_member: 2, belay_certified: false)
+    patron_9 = gym_3.patrons.create!(name: 'Corey Thompson', years_member: 2, belay_certified: false)
+    
+    visit "/climbing_gym"
+    click_on 'Sort Gyms by Number of Patrons'
+
+    expect(current_path).to eq("/climbing_gym")
+
+    expect("EarthTreks").to appear_before("Vertical Ventures")
+    expect("Vertical Ventures").to appear_before("Movement")
+    end
+  end
 end

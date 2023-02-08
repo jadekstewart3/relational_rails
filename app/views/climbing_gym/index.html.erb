@@ -1,11 +1,12 @@
 <h1>Climbing Gyms</h1>
-<%= link_to 'Patrons', '/patrons' %>
-<%= link_to 'New Climbing Gym', '/climbing_gym/new' %>
+<%= link_to 'Patrons', '/patrons' %><br>
+<%= link_to 'New Climbing Gym', '/climbing_gym/new' %><br>
+<%= link_to 'Sort Gyms by Number of Patrons', "/climbing_gym", sort: "by_patrons" %>
 <ul>
   <% @climbing_gyms.each_with_index do |gym, index|%>
     <li id=gym-<%=index%>>
-     <p> <%=gym.name%> 
-     <%= link_to "Update #{gym.name}", "/climbing_gym/#{gym.id}/edit" %>
+     <p> <h3><%=gym.name%></h3>
+     <%= link_to "Update #{gym.name}", "/climbing_gym/#{gym.id}/edit" %> <br>
      <%= link_to "Delete #{gym.name}", "/climbing_gym/#{gym.id}", method: :delete %> </p>
       Created at: <%=gym.created_at%>
       <p>Location: <%= gym.city %></p>
